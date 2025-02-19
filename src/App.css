@@ -1,121 +1,267 @@
-/* Estilos Globais */
+/* Estilo geral do layout */
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa;
-  color: #343a40;
+  background-color: #274058;
+  color: #ecf0f1;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Background principal */
-.bg-main {
-  background-color: #003366;  /* Azul profissional */
-}
-
-/* Container Principal */
-.container {
-  min-height: 100vh;
+/* Barra Lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 280px; /* Sidebar maior para evitar cortes */
+  background-color: #34495e;
+  padding: 25px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  background-color: #003366; /* Azul escuro */
-}
-
-/* Card de Apresentação */
-.card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 800px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  text-align: center;
-}
-
-/* Títulos */
-.heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #003366;
-  margin-bottom: 20px;
-}
-
-/* Subtítulos e Parágrafos */
-.paragraph {
-  font-size: 1.1rem;
-  color: #6c757d;
-  margin-bottom: 20px;
-}
-
-/* Botões */
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.button {
-  padding: 12px 24px;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
   color: white;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  text-align: center;
+  transition: width 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.bg-purple {
-  background-color: #6f42c1;  /* Roxo elegante */
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+  margin-bottom: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.bg-purple:hover {
-  background-color: #5a2c9c;
+.sidebar-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 5px;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
-.bg-indigo {
-  background-color: #007bff;  /* Azul padrão */
+.sidebar-header p {
+  font-size: 1rem;
+  color: #bdc3c7;
+  margin: 0;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
-.bg-indigo:hover {
-  background-color: #0056b3;
+/* Lista de Contatos */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.bg-gray {
-  background-color: #6c757d;  /* Cinza sutil */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
 }
 
-.bg-gray:hover {
-  background-color: #495057;
+.contact-item .icon {
+  font-size: 1.5rem;
+  min-width: 24px;
+}
+
+.contact-item p {
+  margin: 0;
+  max-width: calc(100% - 30px);
+  word-wrap: break-word;
 }
 
 /* Links */
 .link {
-  color: #007bff;
+  color: #bdc3c7;
   text-decoration: none;
-  font-weight: bold;
 }
 
 .link:hover {
-  text-decoration: underline;
+  color: #ecf0f1;
 }
 
-/* Informações de Contato */
-.contact-info {
-  margin-top: 30px;
+/* Conteúdo Principal */
+.main-content {
+  margin-left: 300px;
+  padding: 20px;
+}
+
+/* Cartões */
+.card {
+  background-color: #c6c8ca;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.section-title {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    color: #95a5a6;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+  }
+  
+  .section-title:hover {
+    color: #000000;
+  }
+
+/* Habilidades - Mantendo destaque por cores */
+.top-menu {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.language {
+  padding: 10px 15px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+/* Cores para cada habilidade */
+.python {
+  background-color: #3776AB;
+}
+
+.javascript {
+  background-color: #F7DF1E;
+  color: black;
+}
+
+.react {
+  background-color: #61DBFB;
+  color: black;
+}
+
+.nodejs {
+  background-color: #68A063;
+}
+
+.postgresql {
+  background-color: #336791;
+}
+
+.mongodb {
+  background-color: #47A248;
+}
+
+/* Efeito hover */
+.language:hover {
+  opacity: 0.8;
+}
+
+/* Seções de Experiência e Educação */
+.experience-card, .education-item {
+  background-color: #fafafa;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 10px;
   font-size: 0.9rem;
-  color: #495057;
 }
 
-.contact-info a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 500;
+.experience-card h3, .education-title {
+  font-size: 1.2rem;
+  color: rgb(82, 82, 82);
+  margin-bottom: 5px;
 }
 
-.contact-info a:hover {
-  text-decoration: underline;
+.experience-card p, .education-details, .education-description {
+  font-size: 0.85rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 250px;
+    padding: 20px;
+  }
+
+  .main-content {
+    margin-left: 270px;
+  }
+
+  .sidebar-header h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Para tablets e celulares */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    padding: 15px;
+    position: static;
+    height: auto;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .sidebar-header {
+    align-items: center;
+    text-align: center;
+  }
+
+  .sidebar-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-list {
+    align-items: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  .top-menu {
+    justify-content: center;
+  }
+}
+
+/* Para smartphones */
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 10px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .card {
+    padding: 8px;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
 }
