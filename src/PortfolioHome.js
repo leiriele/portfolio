@@ -265,7 +265,7 @@ const PortfolioHome = () => {
                     — UFU
                   </h3>
                   <p className="education-details">
-                    Bolsista e Monitora Voluntária | 2022 – 2023
+                    Bolsista e Monitora Voluntária 
                   </p>
                   <p className="education-description">
                     Atuação em ações de ensino e apoio ao desenvolvimento do
@@ -277,7 +277,7 @@ const PortfolioHome = () => {
                   <h3 className="education-title">
                     AFIN – Apoio ao Ingresso no Ensino Superior — UFU
                   </h3>
-                  <p className="education-details">Bolsista | 2022</p>
+                  <p className="education-details">Bolsista </p>
                   <p className="education-description">
                     Participação em projeto de apoio educacional voltado ao
                     ingresso no ensino superior.
@@ -287,7 +287,7 @@ const PortfolioHome = () => {
                 <div className="education-item">
                   <h3 className="education-title">Jovens Programadores</h3>
                   <p className="education-details">
-                    Monitora Voluntária | 2019
+                    Monitora Voluntária 
                   </p>
                   <p className="education-description">
                     Apoio em atividades introdutórias de programação para jovens

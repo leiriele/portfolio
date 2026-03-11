@@ -146,6 +146,16 @@ body {
   color: black;
 }
 
+.java {
+  background-color: #f89820;
+  color: white;
+}
+
+.django {
+  background-color: #092e20;
+  color: white;
+}
+
 .react {
   background-color: #61DBFB;
   color: black;
@@ -163,10 +173,40 @@ body {
   background-color: #47A248;
 }
 
+.rest {
+  background-color: #6c757d;
+  color: white;
+}
+
+.docker {
+  background-color: #2496ed;
+  color: white;
+}
+
+.terraform {
+  background-color: #7b42bc;
+  color: white;
+}
+
+.linux {
+  background-color: #333333;
+  color: white;
+}
+
+.git {
+  background-color: #f1502f;
+  color: white;
+}
+
+.github {
+  background-color: #181717;
+  color: white;
+}
 /* Efeito hover */
 .language:hover {
   opacity: 0.8;
 }
+
 
 /* Seções de Experiência e Educação */
 .experience-card, .education-item {
