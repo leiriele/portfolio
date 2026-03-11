@@ -83,7 +83,7 @@ const PortfolioHome = () => {
             <h1 className="heading">Sobre Mim</h1>
             <p className="paragraph">
               <strong>Bacharelado em Sistemas de Informação</strong> — Universidade
-              Federal de Uberlândia (UFU) | Em andamento
+              Federal de Uberlândia (UFU) | <strong>Em andamento</strong>
             </p>
 
             <h2 className="section-title">Resumo Profissional</h2>
@@ -220,7 +220,7 @@ const PortfolioHome = () => {
           </div>
         </section>
 
-        <section className="education">
+        {/* <section className="education">
           <div className="card">
             <h2
               className="section-title"
@@ -244,7 +244,7 @@ const PortfolioHome = () => {
               </div>
             )}
           </div>
-        </section>
+        </section> */}
 
         <section className="projects">
           <div className="card">
