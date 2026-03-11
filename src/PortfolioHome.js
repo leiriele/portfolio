@@ -1,103 +1,218 @@
-import React from "react";
-import { FaLinkedin, FaGithub, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import React, { useState } from "react";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaServer,
+  FaCode,
+  FaGraduationCap,
+  FaProjectDiagram,
+} from "react-icons/fa";
 import "./App.css";
-import { useState } from "react";
-
 
 const PortfolioHome = () => {
-  const [showEducation, setShowEducation] = useState(false);
-  const [showExperience, setShowExperience] = useState(false);
+  const [showExperience, setShowExperience] = useState(true);
+  const [showEducation, setShowEducation] = useState(true);
+  const [showProjects, setShowProjects] = useState(true);
 
   return (
     <div className="container-fluid">
-      {/* Barra Lateral */}
-      <div className="sidebar">
+      {/* Sidebar */}
+      <aside className="sidebar">
         <div className="sidebar-header">
-          <h2>Leiriele Corrêa</h2>
-          <p>Desenvolvedora Full-Stack Jr.</p>
+          <h2>LEIRIELE CORRÊA</h2>
+          <p>Full Stack Developer | DevOps | Infraestrutura</p>
         </div>
+
         <div className="contact-list">
           <div className="contact-item">
             <FaPhone className="icon" />
             <p>(34) 99117-0325</p>
           </div>
+
           <div className="contact-item">
             <FaMapMarkerAlt className="icon" />
-            <p>Uberlândia, MG</p>
+            <p>Uberlândia – MG, Brasil</p>
           </div>
+
           <div className="contact-item">
             <FaEnvelope className="icon" />
-            <p><a href="mailto:leiricorrea@gmail.com" className="link">leiricorrea@gmail.com</a></p>
+            <p>
+              <a href="mailto:leiricorrea@gmail.com" className="link">
+                leiricorrea@gmail.com
+              </a>
+            </p>
           </div>
+
           <div className="contact-item">
             <FaLinkedin className="icon" />
-            <p><a href="https://www.linkedin.com/in/leiriele" className="link">linkedin.com/in/leiriele</a></p>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/leiriele"
+                target="_blank"
+                rel="noreferrer"
+                className="link"
+              >
+                linkedin.com/in/leiriele
+              </a>
+            </p>
           </div>
+
           <div className="contact-item">
             <FaGithub className="icon" />
-            <p><a href="https://github.com/leiriele" className="link">github.com/leiriele</a></p>
+            <p>
+              <a
+                href="https://github.com/leiriele"
+                target="_blank"
+                rel="noreferrer"
+                className="link"
+              >
+                github.com/leiriele
+              </a>
+            </p>
           </div>
         </div>
-      </div>
+      </aside>
 
-      {/* Conteúdo Principal */}
-      <div className="main-content">
+      {/* Main */}
+      <main className="main-content">
         <section className="about-me">
           <div className="card">
             <h1 className="heading">Sobre Mim</h1>
             <p className="paragraph">
-              Graduanda em Sistemas de Informação, com experiência em desenvolvimento FullStack para sistemas web.
-              Atuação em suporte ao cliente e backoffice, incluindo análise de dados e atendimento receptivo.
-              Habilidade em Python, JavaScript, React e Node.js, além de bancos de dados relacionais (PostgreSQL) e não relacionais (MongoDB).
-              Experiência em montagem, diagnóstico e reparo de hardware e software, bem como participação em projetos de extensão e aplicação de metodologias ágeis.
+              <strong>Bacharelado em Sistemas de Informação</strong> — Universidade
+              Federal de Uberlândia (UFU) | Em andamento
             </p>
 
+            <h2 className="section-title">Resumo Profissional</h2>
+            <p className="paragraph">
+              Graduanda em Sistemas de Informação com experiência em
+              <strong> desenvolvimento Full Stack </strong>
+              e <strong>infraestrutura de aplicações</strong>. Atuo com
+              <strong> Python, Django, JavaScript, React e Node.js</strong>,
+              além de integração com <strong>ERP</strong>, desenvolvimento e
+              consumo de <strong>APIs REST</strong>, administração de
+              <strong> servidores Linux</strong>, organização de
+              <strong> containers Docker</strong>, análise de
+              <strong> logs</strong> e suporte a aplicações em ambiente de
+              produção.
+            </p>
           </div>
         </section>
 
         <section className="skills">
           <div className="card">
-            <h2 className="section-title">Habilidades</h2>
+            <h2 className="section-title">
+              <FaCode style={{ marginRight: "8px" }} />
+              Tecnologias
+            </h2>
+
             <div className="top-menu">
               <div className="language python">Python</div>
               <div className="language javascript">JavaScript</div>
-              <div className="language react">React</div>
+              <div className="language java">Java</div>
+              <div className="language django">Django</div>
+              <div className="language react">React.js</div>
               <div className="language nodejs">Node.js</div>
               <div className="language postgresql">PostgreSQL</div>
               <div className="language mongodb">MongoDB</div>
+              <div className="language rest">REST APIs</div>
+              <div className="language docker">Docker</div>
+              <div className="language terraform">Terraform</div>
+              <div className="language linux">Linux</div>
+              <div className="language git">Git</div>
+              <div className="language github">GitHub</div>
             </div>
           </div>
         </section>
 
         <section className="experience">
           <div className="card">
-            <h2 className="section-title" onClick={() => setShowExperience(!showExperience)}>
+            <h2
+              className="section-title"
+              onClick={() => setShowExperience(!showExperience)}
+              style={{ cursor: "pointer" }}
+            >
+              <FaServer style={{ marginRight: "8px" }} />
               Experiência Profissional {showExperience ? "▲" : "▼"}
             </h2>
+
             {showExperience && (
               <div className="experience-list">
                 <div className="experience-card">
-                  <h3>Desenvolvedor FullStack Jr. (PJ)</h3>
-                  <p><strong>eSolvere Tecnologia</strong> | Fevereiro 2024 - Presente</p>
+                  <h3>Estagiária DevOps / Infraestrutura</h3>
+                  <p>
+                    <strong>Landix Sistemas</strong> | Jul 2025 – Presente
+                  </p>
                   <ul>
-                    <li>Desenvolvimento e manutenção de sistemas web com React e Django/Python.</li>
-                    <li>Integrações de APIs RESTful para comunicação entre microserviços.</li>
-                    <li>Otimização de performance e expansão de funcionalidades em ambiente de produção.</li>
+                    <li>Administração e manutenção de servidores e máquinas</li>
+                    <li>Monitoramento de serviços e análise de logs</li>
+                    <li>
+                      Suporte à infraestrutura e configuração de ambientes de
+                      aplicação
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="experience-card">
+                  <h3>Desenvolvedora Full Stack Jr.</h3>
+                  <p>
+                    <strong>eSolvere Tecnologia</strong> | Fev 2024 – Presente
+                  </p>
+                  <ul>
+                    <li>
+                      Desenvolvimento de aplicações web com React (frontend) e
+                      Django/Python (backend)
+                    </li>
+                    <li>Desenvolvimento e manutenção de APIs REST</li>
+                    <li>Integração de sistema interno com ERP corporativo</li>
+                    <li>
+                      Desenvolvimento do módulo de Apontamentos de Produção
+                    </li>
+                    <li>
+                      Correção de bugs e otimização de performance de aplicações
+                    </li>
+                    <li>
+                      Administração e organização de containers Docker e serviços
+                      da aplicação
+                    </li>
+                    <li>
+                      Análise de logs de sistema e aplicação para diagnóstico e
+                      correção de falhas
+                    </li>
+                    <li>
+                      Suporte à infraestrutura com manutenção de servidores Linux
+                    </li>
+                    <li>
+                      Geração de relatórios operacionais e análise de dados
+                    </li>
                   </ul>
                 </div>
 
                 <div className="experience-card">
                   <h3>Estagiária em Desenvolvimento de Software</h3>
-                  <p><strong>eSolvere Tecnologia</strong> | Agosto 2023 - Janeiro 2024</p>
-                  <p>Apoio na criação e manutenção de sistemas web com APIs RESTful em Django e integração com React.</p>
+                  <p>
+                    <strong>eSolvere Tecnologia</strong> | Ago 2023 – Jan 2024
+                  </p>
+                  <ul>
+                    <li>Implementação de APIs REST com Django</li>
+                    <li>Integração de frontend com React</li>
+                    <li>Manutenção e evolução de aplicações web</li>
+                  </ul>
                 </div>
 
                 <div className="experience-card">
-                  <h3>Atendente Júnior e Backoffice</h3>
-                  <p><strong>Algar Tecnologia e Consultoria S.A.</strong> | Abril 2012 - Outubro 2013</p>
+                  <h3>Atendente Júnior / Backoffice</h3>
+                  <p>
+                    <strong>Algar Tecnologia</strong> | 2012 – 2013
+                  </p>
                   <ul>
-                    <li>Atendimento ao cliente e tarefas de backoffice.</li>
-                    <li>Suporte e análise de dados.</li>
+                    <li>
+                      Atendimento ao cliente, suporte operacional e análise de
+                      dados
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -107,72 +222,94 @@ const PortfolioHome = () => {
 
         <section className="education">
           <div className="card">
-            <h2 className="section-title" onClick={() => setShowEducation(!showEducation)}>
+            <h2
+              className="section-title"
+              onClick={() => setShowEducation(!showEducation)}
+              style={{ cursor: "pointer" }}
+            >
+              <FaGraduationCap style={{ marginRight: "8px" }} />
               Formação Acadêmica {showEducation ? "▲" : "▼"}
             </h2>
+
             {showEducation && (
               <div className="education-list">
                 <div className="education-item">
-                  <h3 className="education-title">Python Developer - Bootcamp</h3>
-                  <p className="education-details">Plataforma: DIO | Duração: 64h | Ano: 2023</p>
-                  <p className="education-description">Desenvolvimento de habilidades avançadas em Python, abrangendo desde a base até tópicos mais complexos.</p>
-                </div>
-
-                <div className="education-item">
-                  <h3 className="education-title">React Developer - Bootcamp</h3>
-                  <p className="education-details">Plataforma: DIO | Duração: 34h | Ano: 2023</p>
-                  <p className="education-description">Aprofundamento no desenvolvimento de aplicações interativas com React, com foco em hooks e gerenciamento de estado.</p>
-                </div>
-
-                <div className="education-item">
-                  <h3 className="education-title">Desenvolvimento Web Completo</h3>
-                  <p className="education-details">Plataforma: Udemy | Duração: 114h | Ano: 2023</p>
-                  <p className="education-description">Curso intensivo sobre desenvolvimento web, englobando front-end, back-end e integração com bancos de dados.</p>
-                </div>
-
-                <div className="education-item">
-                  <h3 className="education-title">UX Designer - Curso de Curta Duração</h3>
-                  <p className="education-details">Plataforma: DIO | Duração: 30h | Ano: 2023</p>
-                  <p className="education-description">Aperfeiçoamento na criação de experiências de usuário com foco em design intuitivo e usabilidade.</p>
-                </div>
-
-                <div className="education-item">
-                  <h3 className="education-title">Projetos Ágeis com SCRUM - Curso de Curta Duração</h3>
-                  <p className="education-details">Plataforma: DIO | Duração: 2h | Ano: 2022</p>
-                  <p className="education-description">Introdução às metodologias ágeis, com ênfase no SCRUM para otimizar a gestão de projetos.</p>
-                </div>
-
-                <div className="education-item">
-                  <h3 className="education-title">Introdução ao Git e ao GitHub</h3>
-                  <p className="education-details">Plataforma: DIO | Duração: 5h | Ano: 2022</p>
-                  <p className="education-description">Fundamentos de controle de versão e colaboração utilizando Git e GitHub, essenciais para o desenvolvimento moderno.</p>
-                </div>
-
-                <div className="education-item">
-                  <h3 className="education-title">Introdução ao Kotlin</h3>
-                  <p className="education-details">Plataforma: DIO | Duração: 6h | Ano: 2022</p>
-                  <p className="education-description">Curso básico de Kotlin, com ênfase em suas principais características e aplicações no desenvolvimento de aplicativos Android.</p>
-                </div>
-
-                <div className="education-item">
-                  <h3 className="education-title">Fundamentos de Orientação a Objetos com Kotlin</h3>
-                  <p className="education-details">Plataforma: DIO | Duração: 4h | Ano: 2022</p>
-                  <p className="education-description">Aprofundamento em conceitos de orientação a objetos utilizando Kotlin, para desenvolvimento mais estruturado e escalável.</p>
-                </div>
-
-                <div className="education-item">
-                  <h3 className="education-title">Desenvolvimento para Internet e Banco de Dados com Python e Django</h3>
-                  <p className="education-details">Plataforma: DIO | Duração: 4h | Ano: 2022</p>
-                  <p className="education-description">Aprendizado sobre desenvolvimento web com Python e Django, incluindo integração com bancos de dados relacionais.</p>
+                  <h3 className="education-title">
+                    Bacharelado em Sistemas de Informação
+                  </h3>
+                  <p className="education-details">
+                    Universidade Federal de Uberlândia (UFU) | Em andamento
+                  </p>
                 </div>
               </div>
             )}
           </div>
-
         </section>
 
-      </div>
+        <section className="projects">
+          <div className="card">
+            <h2
+              className="section-title"
+              onClick={() => setShowProjects(!showProjects)}
+              style={{ cursor: "pointer" }}
+            >
+              <FaProjectDiagram style={{ marginRight: "8px" }} />
+              Projetos e Extensão Acadêmica {showProjects ? "▲" : "▼"}
+            </h2>
 
+            {showProjects && (
+              <div className="education-list">
+                <div className="education-item">
+                  <h3 className="education-title">
+                    Despertar do Pensamento Computacional nas Crianças (TechKids)
+                    — UFU
+                  </h3>
+                  <p className="education-details">
+                    Bolsista e Monitora Voluntária | 2022 – 2023
+                  </p>
+                  <p className="education-description">
+                    Atuação em ações de ensino e apoio ao desenvolvimento do
+                    pensamento computacional para crianças.
+                  </p>
+                </div>
+
+                <div className="education-item">
+                  <h3 className="education-title">
+                    AFIN – Apoio ao Ingresso no Ensino Superior — UFU
+                  </h3>
+                  <p className="education-details">Bolsista | 2022</p>
+                  <p className="education-description">
+                    Participação em projeto de apoio educacional voltado ao
+                    ingresso no ensino superior.
+                  </p>
+                </div>
+
+                <div className="education-item">
+                  <h3 className="education-title">Jovens Programadores</h3>
+                  <p className="education-details">
+                    Monitora Voluntária | 2019
+                  </p>
+                  <p className="education-description">
+                    Apoio em atividades introdutórias de programação para jovens
+                    estudantes.
+                  </p>
+                </div>
+
+                <div className="education-item">
+                  <h3 className="education-title">
+                    Inclusão Digital para Pessoas Idosas
+                  </h3>
+                  <p className="education-details">Monitora Voluntária</p>
+                  <p className="education-description">
+                    Atuação no ensino de informática básica e uso de tecnologias
+                    digitais.
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      </main>
     </div>
   );
 };
